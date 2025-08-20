@@ -12,8 +12,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+				dir('Amazon') {
                 git url: 'https://github.com/RahulBGuttedar/Ansible-Sonar-Jankins.git', branch: 'main'
-            }
+				}
+			}
         }
 
         stage('Build WAR with Maven') {
